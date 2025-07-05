@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JeroxMC | Portafolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Outfit', sans-serif;
+    }
+    body {
+      background-color: #0f0f0f;
+      color: #f0f0f0;
+      line-height: 1.6;
+      padding: 2rem;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    h1 {
+      font-size: 3rem;
+      color: #00bcd4;
+    }
+    p {
+      color: #ccc;
+    }
+    .section {
+      margin-bottom: 2.5rem;
+    }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    .card {
+      background: #1a1a1a;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card h3 {
+      color: #03dac6;
+      margin-bottom: 0.5rem;
+    }
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
+    a {
+      color: #03a9f4;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>JeroxMC</h1>
+    <p>Desarrollador y creador de contenido para servidores Minecraft</p>
+  </header>
+
+  <section class="section">
+    <h2>Servicios</h2>
+    <div class="services">
+      <div class="card">
+        <h3>Configuración de Plugins</h3>
+        <p>Optimizo y configuro plugins para servidores Minecraft de todo tipo (Lobby, Survival, PvP, etc.).</p>
+      </div>
+      <div class="card">
+        <h3>Desarrollo de Bots de Discord</h3>
+        <p>Creo bots personalizados en Python o JavaScript con sistemas de tickets, bienvenida, verificación y más.</p>
+      </div>
+      <div class="card">
+        <h3>Traducción y Personalización</h3>
+        <p>Traduzco y personalizo archivos de configuración y plugins para adaptarlos a tu comunidad.</p>
+      </div>
+      <div class="card">
+        <h3>Diseño de Packs PvP</h3>
+        <p>Creo texture packs para PvP personalizados (Faithful, BoxPvP, etc.) adaptados a tus necesidades.</p>
+      </div>
+      <div class="card">
+        <h3>Sitios Web de Comunidad</h3>
+        <p>Desarrollo páginas estilo BlackSpigot para publicar recursos, integrar Discord y manejar usuarios.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Mi Comunidad</h2>
+    <p>Únete a nuestra comunidad en Discord donde compartimos recursos, ayudamos con configuraciones y más: <br>
+      <a href="https://discord.gg/qAxB3fyXg8" target="_blank">discord.gg/qAxB3fyXg8</a>
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 JeroxMC. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
