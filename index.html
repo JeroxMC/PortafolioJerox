@@ -1,139 +1,156 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JeroxMC | Portafolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; }
-    body { background-color: #0a0a0a; color: #f0f0f0; line-height: 1.6; padding: 2rem; }
-    header, section, footer { max-width: 1000px; margin: auto; }
-    h1, h2, h3 { color: #00bcd4; }
-    .section { margin-bottom: 3rem; }
-    .intro { text-align: center; margin-bottom: 3rem; }
-    .intro h1 { font-size: 3.5rem; }
-    .intro p { color: #aaa; font-size: 1.2rem; margin-top: 1rem; }
-    .services, .projects, .reviews { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
-    .card { background: #1a1a1a; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); transition: 0.2s ease; }
-    .card:hover { transform: translateY(-5px); }
-    .card h3 { margin-bottom: 0.5rem; color: #03dac6; }
-    .card p { color: #ccc; font-size: 0.95rem; }
-    a { color: #03a9f4; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    footer { text-align: center; font-size: 0.9rem; color: #777; margin-top: 4rem; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexora Beta - Hosting Gratuito 24/7</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* Reset y fuentes */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Roboto', sans-serif; background:linear-gradient(135deg,#0f0c29,#302b63,#24243e); color:#fff; line-height:1.6; }
+
+/* Header */
+header { display:flex; justify-content:space-between; align-items:center; padding:20px 50px; background:rgba(0,0,0,0.8); position:sticky; top:0; z-index:100; box-shadow:0 5px 15px rgba(0,0,0,0.5);}
+header h1 { font-size:2rem; background:linear-gradient(90deg,#00ffcc,#00aaff); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+nav a { margin-left:25px; color:#fff; text-decoration:none; font-weight:500; position:relative; transition:0.3s; }
+nav a::after { content:''; position:absolute; width:0%; height:2px; bottom:-5px; left:0; background:#00ffcc; transition:0.3s; }
+nav a:hover::after { width:100%; }
+nav a:hover { color:#00ffcc; }
+
+/* Hero */
+.hero { text-align:center; padding:100px 20px; animation:fadeIn 1.5s ease forwards; }
+.hero h2 { font-size:3rem; margin-bottom:20px; background:linear-gradient(90deg,#00ffcc,#00aaff); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.hero p { font-size:1.3rem; margin-bottom:30px; }
+.btn { padding:15px 40px; font-size:1.2rem; font-weight:bold; background:linear-gradient(135deg,#00ffcc,#00aaff); color:#000; border:none; border-radius:12px; cursor:pointer; transition:0.3s; box-shadow:0 5px 20px rgba(0,0,0,0.5);}
+.btn:hover { transform:translateY(-5px) scale(1.05); box-shadow:0 10px 25px rgba(0,0,0,0.7); }
+
+/* Animaciones */
+@keyframes fadeIn { 0% {opacity:0; transform:translateY(-20px);} 100% {opacity:1; transform:translateY(0);} }
+
+/* Features */
+.features { display:flex; flex-wrap:wrap; justify-content:space-around; gap:30px; margin-top:60px; }
+.feature-card { background:rgba(255,255,255,0.05); padding:30px; border-radius:20px; flex:1 1 280px; text-align:center; transition:0.3s; backdrop-filter:blur(10px); }
+.feature-card:hover { transform:translateY(-10px); background:rgba(0,255,204,0.08); border:1px solid #00ffcc; }
+.feature-card h3 { font-size:1.6rem; margin-bottom:15px; color:#00ffcc; }
+.feature-card ul { list-style:none; padding:0; text-align:left; margin:10px 0; }
+.feature-card ul li { margin-bottom:10px; font-size:1rem; }
+
+/* Planes */
+.plans { margin-top:80px; padding:0 20px; }
+.plans h2 { text-align:center; font-size:2.8rem; margin-bottom:50px; background:linear-gradient(90deg,#00ffcc,#00aaff); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.plan-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px; }
+.plan-card { background:rgba(255,255,255,0.05); padding:25px; border-radius:25px; transition:0.4s; border:2px solid rgba(0,255,204,0.2); backdrop-filter:blur(10px); box-shadow:0 8px 20px rgba(0,0,0,0.5);}
+.plan-card:hover { transform:translateY(-10px) scale(1.03); background:rgba(0,255,204,0.05); border-color:#00ffcc; box-shadow:0 12px 25px rgba(0,0,0,0.7);}
+.plan-card h4 { font-size:1.5rem; margin-bottom:10px; color:#00ffcc; }
+.plan-card ul { list-style:none; padding:0; margin-bottom:15px; }
+.plan-card ul li { margin-bottom:6px; font-size:1rem; }
+.plan-card p { font-style:italic; color:#00ffd4; margin-bottom:15px; }
+.plan-card .btn { width:100%; }
+
+/* Footer */
+footer { text-align:center; padding:25px; background:rgba(0,0,0,0.85); margin-top:50px; }
+
+/* Responsivo */
+@media(max-width:768px){
+    header { flex-direction:column; gap:10px; }
+    .features { flex-direction:column; }
+}
+</style>
 </head>
 <body>
-  <header class="intro">
-    <h1>JeroxMC</h1>
-    <p>Joven desarrollador de 16 años, apasionado por Minecraft, la programación y la creación de comunidades.</p>
-  </header>
 
-  <section class="section">
-    <h2>Sobre Mí</h2>
-    <p>¡Hola! Me llamo JeroxMC y tengo 16 años. Llevo varios años creando contenido relacionado con Minecraft, incluyendo servidores, plugins, bots de Discord y más. Me encanta aprender cosas nuevas, colaborar con otras comunidades y ofrecer soluciones creativas para servidores o proyectos relacionados con Minecraft. Actualmente administro una comunidad activa donde compartimos conocimientos, configuraciones, recursos y ayuda técnica.</p>
-  </section>
+<header>
+    <h1>Nexora Beta 🚀</h1>
+    <nav>
+        <a href="#inicio">Inicio 🏠</a>
+        <a href="https://panel.nexora.cat/" target="_blank">Panel 🖥️</a>
+        <a href="https://dash.nexora.cat/" target="_blank">Dashboard 📊</a>
+        <a href="#planes">Planes 💎</a>
+        <a href="https://discord.gg/sspRzcYwpw" target="_blank">Soporte 💬</a>
+    </nav>
+</header>
 
-  <section class="section">
-    <h2>Servicios</h2>
-    <div class="services">
-      <div class="card">
-        <h3>Configuración de Plugins</h3>
-        <p>Optimizo y personalizo plugins para servidores Minecraft (lobby, survival, minijuegos, PvP, etc.)</p>
-      </div>
-      <div class="card">
-        <h3>Desarrollo de Bots de Discord</h3>
-        <p>Creo bots útiles con sistemas como bienvenida, tickets, verificación, logs y comandos personalizados.</p>
-      </div>
-      <div class="card">
-        <h3>Traducción de Plugins</h3>
-        <p>Traduzco archivos de configuración del inglés al español con estilo profesional y ordenado.</p>
-      </div>
-      <div class="card">
-        <h3>Diseño de Packs PvP</h3>
-        <p>Creo texture packs PvP personalizados para 1.8 y 1.21 con espadas cortas, colores llamativos y más.</p>
-      </div>
-      <div class="card">
-        <h3>Páginas Web</h3>
-        <p>Desarrollo páginas como foros o tiendas para servidores, con integración a Discord y paneles de administración.</p>
-      </div>
-    </div>
-  </section>
+<div class="container">
 
-  <section class="section">
-    <h2>Proyectos Destacados</h2>
-    <div class="projects">
-      <div class="card">
-        <h3>JeroxMC Community</h3>
-        <img src="https://i.imgur.com/SaAGWY3.png" alt="JeroxMC Community" style="width:100%; border-radius:10px; margin-bottom:10px;">
-        <p style="color:#aaa; font-size:0.9rem; margin-top:6px;">Vista previa de la comunidad y su estilo visual.</p>
-        <p>Un espacio donde los jugadores y desarrolladores pueden conectarse, compartir ideas, obtener ayuda técnica y descargar recursos únicos.</p>
-      </div>
-      <div class="card">
-        <h3>Bot Multiuso</h3>
-        <img src="https://i.imgur.com/SETnlzc.png" alt="Bot Multiuso" style="width:100%; border-radius:10px; margin-bottom:10px;">
-        <p>Un bot hecho en Python con moderación, tickets, cumpleaños, sugerencias y más. Ideal para comunidades de Minecraft.</p>
-      </div>
-      <div class="card">
-        <h3>Servidor PvP Avanzado</h3>
-        <img src="https://i.imgur.com/UZgAIwR.png" alt="Servidor PvP Avanzado" style="width:100%; border-radius:10px; margin-bottom:10px;">
-        <p style="color:#aaa; font-size:0.9rem; margin-top:6px;">(Solo tengo foto del spawn)</p>
-        <p>Un servidor completo con modos PvP personalizados, sistema de ranking, scoreboard dinámica y hologramas configurados al estilo competitivo.</p>
-      </div>
-      <div class="card">
-        <h3>Servidor Lobby Personalizado</h3>
-        <p>Configuración completa de un lobby profesional con DeluxeHub, TAB, DecentHologram, nLogin y estilo visual decorado. Ideal como punto de inicio para tu network.</p>
-      </div>
-      <div class="card">
-        <h3>Panel de Tickets en Discord</h3>
-        <p>Desarrollado con Discord.py y SelectMenu. Permite al staff gestionar tickets con calificaciones al cerrarlos, logs y sistema de permisos. Fácil de configurar.</p>
-      </div>
-      <div class="card">
-        <h3>Pack PvP Faithful</h3>
-        <p>Diseño limpio y competitivo basado en el estilo Faithful con espadas cortas, HUD optimizado, colores nítidos y buen rendimiento. Ideal para servidores de BoxPvP y modalidades PvP intensas.</p>
-      </div>
-    </div>
-  </section>
+    <!-- Hero -->
+    <section class="hero" id="inicio">
+        <h2>Bienvenido a Nexora Beta</h2>
+        <p>El hosting <strong>100% gratuito</strong> para todos tus proyectos. Con recursos garantizados y activos <strong>24/7</strong> 💻</p>
+        <button class="btn" onclick="window.location.href='https://discord.gg/sspRzcYwpw'">Empezar ahora 🎉</button>
+    </section>
 
-  <section class="section">
-    <h2>Opiniones y Reseñas</h2>
-    <div class="reviews">
-      <div class="card">
-        <h3>⭐️⭐️⭐️⭐️⭐️</h3>
-        <p>Excelente trabajo, configuró mi servidor completo en poco tiempo y con mucho detalle.</p>
-        <p><em>- Usuario: kimdokja0222</em></p>
-      </div>
-      <div class="card">
-        <h3>⭐️⭐️⭐️⭐️</h3>
-        <p>Muy buena atención, el bot de Discord que me hizo funciona perfecto. 100% recomendado.</p>
-        <p><em>- Usuario: JustinMC</em></p>
-      </div>
-      <div class="card">
-        <h3>⭐️⭐️⭐️⭐️⭐️</h3>
-        <p>El pack PvP me encantó, justo lo que necesitaba para mi servidor de box.</p>
-        <p><em>- Usuario: KurtysMC</em></p>
-      </div>
-    </div>
-  </section>
+    <!-- Features -->
+    <section class="features">
+        <div class="feature-card">
+            <h3>Plan Gratis 🆓</h3>
+            <ul>
+                <li>💾 4 GB RAM</li>
+                <li>🧠 2 CPU Cores</li>
+                <li>💽 20 GB SSD Storage</li>
+                <li>Hosting activo 24/7 🕒</li>
+            </ul>
+            <button class="btn" onclick="window.location.href='https://discord.gg/sspRzcYwpw'">Obtener Ahora 🚀</button>
+        </div>
 
-  <section class="section">
-    <h2>Únete a mi comunidad</h2>
-    <p>Si quieres aprender más, pedir ayuda o compartir tus proyectos, estás invitado a unirte a mi comunidad de Discord:<br>
-      <a href="https://discord.gg/qAxB3fyXg8" target="_blank">https://discord.gg/qAxB3fyXg8</a>
-    </p>
-  </section>
+        <div class="feature-card">
+            <h3>Invita y Obtén Más 🎁</h3>
+            <p>Desbloquea planes adicionales por invitar amigos. Todos los planes son gratuitos y activos 24/7.</p>
+        </div>
 
-  <section class="section">
-    <h2>Contacto</h2>
-    <p>¿Quieres trabajar conmigo o tienes alguna duda? Puedes contactarme directamente por Discord o a través de la comunidad.<br>
-      Usuario: <strong>@JeroxMC</strong>
-    </p>
-  </section>
+        <div class="feature-card">
+            <h3>Soporte 24/7 💬</h3>
+            <p>Únete a nuestro Discord y recibe asistencia inmediata de nuestro equipo y comunidad.</p>
+        </div>
+    </section>
 
-  <footer>
-    <p>&copy; 2025 JeroxMC. Diseñado por mí, con pasión por Minecraft y el desarrollo digital. :)</p>
-  </footer>
+    <!-- Planes -->
+    <section class="plans" id="planes">
+        <h2>Planes por Invitar Amigos 🔹</h2>
+        <div class="plan-grid">
+            <script>
+                const planes = [
+                    {name:"Plan 2 Invites", ram:"6GB", cpu:"2 CPU Cores", ssd:"30GB"},
+                    {name:"Plan 4 Invites", ram:"8GB", cpu:"3 CPU Cores", ssd:"40GB"},
+                    {name:"Plan 6 Invites", ram:"10GB", cpu:"3 CPU Cores", ssd:"50GB"},
+                    {name:"Plan 8 Invites", ram:"12GB", cpu:"4 CPU Cores", ssd:"60GB"},
+                    {name:"Plan 10 Invites", ram:"14GB", cpu:"4 CPU Cores", ssd:"70GB"},
+                    {name:"Plan 12 Invites", ram:"16GB", cpu:"5 CPU Cores", ssd:"80GB"},
+                    {name:"Plan 14 Invites", ram:"18GB", cpu:"5 CPU Cores", ssd:"90GB"},
+                    {name:"Plan 16 Invites", ram:"20GB", cpu:"6 CPU Cores", ssd:"100GB"},
+                    {name:"Plan 18 Invites", ram:"22GB", cpu:"6 CPU Cores", ssd:"110GB"},
+                    {name:"Plan 20 Invites", ram:"24GB", cpu:"7 CPU Cores", ssd:"120GB"},
+                    {name:"Plan 22 Invites", ram:"26GB", cpu:"7 CPU Cores", ssd:"130GB"},
+                    {name:"Plan 24 Invites", ram:"28GB", cpu:"8 CPU Cores", ssd:"140GB"},
+                    {name:"Plan 26 Invites", ram:"30GB", cpu:"8 CPU Cores", ssd:"150GB"},
+                    {name:"Plan 28 Invites", ram:"32GB", cpu:"8 CPU Cores", ssd:"160GB"}
+                ];
+                const container = document.querySelector(".plan-grid");
+                planes.forEach((p, i) => {
+                    const delay = i*0.1;
+                    container.innerHTML += `
+                    <div class="plan-card" style="animation-delay:${delay}s; animation:fadeIn 1s forwards;">
+                        <h4>${p.name}</h4>
+                        <p>Activo 24/7 🕒</p>
+                        <ul>
+                            <li>💾 ${p.ram} RAM</li>
+                            <li>🧠 ${p.cpu}</li>
+                            <li>💽 ${p.ssd} SSD Storage</li>
+                        </ul>
+                        <button class="btn" onclick="window.location.href='https://discord.gg/sspRzcYwpw'">Ordenar Ahora 🚀</button>
+                    </div>`;
+                });
+            </script>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    &copy; 2025 Nexora Beta - Hosting 100% gratuito y activo 24/7 | Todos los planes son sin coste alguno
+</footer>
+
 </body>
 </html>
 
