@@ -1,156 +1,20 @@
-
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nexora Beta - Hosting Gratuito 24/7</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<style>
-/* Reset y fuentes */
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'Roboto', sans-serif; background:linear-gradient(135deg,#0f0c29,#302b63,#24243e); color:#fff; line-height:1.6; }
-
-/* Header */
-header { display:flex; justify-content:space-between; align-items:center; padding:20px 50px; background:rgba(0,0,0,0.8); position:sticky; top:0; z-index:100; box-shadow:0 5px 15px rgba(0,0,0,0.5);}
-header h1 { font-size:2rem; background:linear-gradient(90deg,#00ffcc,#00aaff); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-nav a { margin-left:25px; color:#fff; text-decoration:none; font-weight:500; position:relative; transition:0.3s; }
-nav a::after { content:''; position:absolute; width:0%; height:2px; bottom:-5px; left:0; background:#00ffcc; transition:0.3s; }
-nav a:hover::after { width:100%; }
-nav a:hover { color:#00ffcc; }
-
-/* Hero */
-.hero { text-align:center; padding:100px 20px; animation:fadeIn 1.5s ease forwards; }
-.hero h2 { font-size:3rem; margin-bottom:20px; background:linear-gradient(90deg,#00ffcc,#00aaff); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-.hero p { font-size:1.3rem; margin-bottom:30px; }
-.btn { padding:15px 40px; font-size:1.2rem; font-weight:bold; background:linear-gradient(135deg,#00ffcc,#00aaff); color:#000; border:none; border-radius:12px; cursor:pointer; transition:0.3s; box-shadow:0 5px 20px rgba(0,0,0,0.5);}
-.btn:hover { transform:translateY(-5px) scale(1.05); box-shadow:0 10px 25px rgba(0,0,0,0.7); }
-
-/* Animaciones */
-@keyframes fadeIn { 0% {opacity:0; transform:translateY(-20px);} 100% {opacity:1; transform:translateY(0);} }
-
-/* Features */
-.features { display:flex; flex-wrap:wrap; justify-content:space-around; gap:30px; margin-top:60px; }
-.feature-card { background:rgba(255,255,255,0.05); padding:30px; border-radius:20px; flex:1 1 280px; text-align:center; transition:0.3s; backdrop-filter:blur(10px); }
-.feature-card:hover { transform:translateY(-10px); background:rgba(0,255,204,0.08); border:1px solid #00ffcc; }
-.feature-card h3 { font-size:1.6rem; margin-bottom:15px; color:#00ffcc; }
-.feature-card ul { list-style:none; padding:0; text-align:left; margin:10px 0; }
-.feature-card ul li { margin-bottom:10px; font-size:1rem; }
-
-/* Planes */
-.plans { margin-top:80px; padding:0 20px; }
-.plans h2 { text-align:center; font-size:2.8rem; margin-bottom:50px; background:linear-gradient(90deg,#00ffcc,#00aaff); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-.plan-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px; }
-.plan-card { background:rgba(255,255,255,0.05); padding:25px; border-radius:25px; transition:0.4s; border:2px solid rgba(0,255,204,0.2); backdrop-filter:blur(10px); box-shadow:0 8px 20px rgba(0,0,0,0.5);}
-.plan-card:hover { transform:translateY(-10px) scale(1.03); background:rgba(0,255,204,0.05); border-color:#00ffcc; box-shadow:0 12px 25px rgba(0,0,0,0.7);}
-.plan-card h4 { font-size:1.5rem; margin-bottom:10px; color:#00ffcc; }
-.plan-card ul { list-style:none; padding:0; margin-bottom:15px; }
-.plan-card ul li { margin-bottom:6px; font-size:1rem; }
-.plan-card p { font-style:italic; color:#00ffd4; margin-bottom:15px; }
-.plan-card .btn { width:100%; }
-
-/* Footer */
-footer { text-align:center; padding:25px; background:rgba(0,0,0,0.85); margin-top:50px; }
-
-/* Responsivo */
-@media(max-width:768px){
-    header { flex-direction:column; gap:10px; }
-    .features { flex-direction:column; }
-}
-</style>
+  <title>Auryx Node – 🚀 Free Host</title>
+  <style>
+    html, body, iframe {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      border: none;
+    }
+  </style>
 </head>
 <body>
-
-<header>
-    <h1>Nexora Beta 🚀</h1>
-    <nav>
-        <a href="#inicio">Inicio 🏠</a>
-        <a href="https://panel.nexora.cat/" target="_blank">Panel 🖥️</a>
-        <a href="https://dash.nexora.cat/" target="_blank">Dashboard 📊</a>
-        <a href="#planes">Planes 💎</a>
-        <a href="https://discord.gg/sspRzcYwpw" target="_blank">Soporte 💬</a>
-    </nav>
-</header>
-
-<div class="container">
-
-    <!-- Hero -->
-    <section class="hero" id="inicio">
-        <h2>Bienvenido a Nexora Beta</h2>
-        <p>El hosting <strong>100% gratuito</strong> para todos tus proyectos. Con recursos garantizados y activos <strong>24/7</strong> 💻</p>
-        <button class="btn" onclick="window.location.href='https://discord.gg/sspRzcYwpw'">Empezar ahora 🎉</button>
-    </section>
-
-    <!-- Features -->
-    <section class="features">
-        <div class="feature-card">
-            <h3>Plan Gratis 🆓</h3>
-            <ul>
-                <li>💾 4 GB RAM</li>
-                <li>🧠 2 CPU Cores</li>
-                <li>💽 20 GB SSD Storage</li>
-                <li>Hosting activo 24/7 🕒</li>
-            </ul>
-            <button class="btn" onclick="window.location.href='https://discord.gg/sspRzcYwpw'">Obtener Ahora 🚀</button>
-        </div>
-
-        <div class="feature-card">
-            <h3>Invita y Obtén Más 🎁</h3>
-            <p>Desbloquea planes adicionales por invitar amigos. Todos los planes son gratuitos y activos 24/7.</p>
-        </div>
-
-        <div class="feature-card">
-            <h3>Soporte 24/7 💬</h3>
-            <p>Únete a nuestro Discord y recibe asistencia inmediata de nuestro equipo y comunidad.</p>
-        </div>
-    </section>
-
-    <!-- Planes -->
-    <section class="plans" id="planes">
-        <h2>Planes por Invitar Amigos 🔹</h2>
-        <div class="plan-grid">
-            <script>
-                const planes = [
-                    {name:"Plan 2 Invites", ram:"6GB", cpu:"2 CPU Cores", ssd:"30GB"},
-                    {name:"Plan 4 Invites", ram:"8GB", cpu:"3 CPU Cores", ssd:"40GB"},
-                    {name:"Plan 6 Invites", ram:"10GB", cpu:"3 CPU Cores", ssd:"50GB"},
-                    {name:"Plan 8 Invites", ram:"12GB", cpu:"4 CPU Cores", ssd:"60GB"},
-                    {name:"Plan 10 Invites", ram:"14GB", cpu:"4 CPU Cores", ssd:"70GB"},
-                    {name:"Plan 12 Invites", ram:"16GB", cpu:"5 CPU Cores", ssd:"80GB"},
-                    {name:"Plan 14 Invites", ram:"18GB", cpu:"5 CPU Cores", ssd:"90GB"},
-                    {name:"Plan 16 Invites", ram:"20GB", cpu:"6 CPU Cores", ssd:"100GB"},
-                    {name:"Plan 18 Invites", ram:"22GB", cpu:"6 CPU Cores", ssd:"110GB"},
-                    {name:"Plan 20 Invites", ram:"24GB", cpu:"7 CPU Cores", ssd:"120GB"},
-                    {name:"Plan 22 Invites", ram:"26GB", cpu:"7 CPU Cores", ssd:"130GB"},
-                    {name:"Plan 24 Invites", ram:"28GB", cpu:"8 CPU Cores", ssd:"140GB"},
-                    {name:"Plan 26 Invites", ram:"30GB", cpu:"8 CPU Cores", ssd:"150GB"},
-                    {name:"Plan 28 Invites", ram:"32GB", cpu:"8 CPU Cores", ssd:"160GB"}
-                ];
-                const container = document.querySelector(".plan-grid");
-                planes.forEach((p, i) => {
-                    const delay = i*0.1;
-                    container.innerHTML += `
-                    <div class="plan-card" style="animation-delay:${delay}s; animation:fadeIn 1s forwards;">
-                        <h4>${p.name}</h4>
-                        <p>Activo 24/7 🕒</p>
-                        <ul>
-                            <li>💾 ${p.ram} RAM</li>
-                            <li>🧠 ${p.cpu}</li>
-                            <li>💽 ${p.ssd} SSD Storage</li>
-                        </ul>
-                        <button class="btn" onclick="window.location.href='https://discord.gg/sspRzcYwpw'">Ordenar Ahora 🚀</button>
-                    </div>`;
-                });
-            </script>
-        </div>
-    </section>
-
-</div>
-
-<footer>
-    &copy; 2025 Nexora Beta - Hosting 100% gratuito y activo 24/7 | Todos los planes son sin coste alguno
-</footer>
-
+  <iframe src="https://professional-hosting-9kk8.bolt.host/" frameborder="0"></iframe>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"6ab0dfe344ab4338a1304407cb150af9","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
 
