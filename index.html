@@ -44,6 +44,32 @@
 
     .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
     .gallery img{width:100%;border-radius:10px;border:1px solid rgba(255,255,255,0.1);object-fit:cover}
+
+    /* Botón Discord flotante */
+    .discord-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: linear-gradient(90deg,#5865F2,#3a45c9);
+      color: white;
+      padding: 12px 18px;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .discord-float:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+    }
+    .discord-float img {
+      width:22px;
+      height:22px;
+      margin-right:8px;
+    }
   </style>
 </head>
 <body>
@@ -95,6 +121,46 @@
             <li><strong>Sistema de recompensas PvP</strong> — Configuración avanzada con PlaceholderAPI</li>
           </ul>
         </section>
+
+        <!-- Sección Testimonios -->
+        <section class="card">
+          <h2>Testimonios</h2>
+          <blockquote style="margin:0 0 12px;padding:12px;border-left:3px solid var(--accent);background:rgba(255,255,255,0.04);border-radius:8px">
+            "JeroxMC configuró mi servidor BoxPvP en tiempo récord y todo funciona perfecto."
+            <br><strong>— Cliente 1</strong>
+          </blockquote>
+          <blockquote style="margin:0;padding:12px;border-left:3px solid var(--accent);background:rgba(255,255,255,0.04);border-radius:8px">
+            "Muy buen trabajo en el bot de Discord, súper profesional y rápido."
+            <br><strong>— Cliente 2</strong>
+          </blockquote>
+        </section>
+
+        <!-- Sección Tecnologías -->
+        <section class="card">
+          <h2>Tecnologías y Herramientas</h2>
+          <ul style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;list-style:none;padding:0">
+            <li style="display:flex;align-items:center;gap:8px">
+              <img src="https://i.imgur.com/zpSg9rp.png" alt="Spigot" style="width:24px;height:24px">
+              Spigot / Paper
+            </li>
+            <li style="display:flex;align-items:center;gap:8px">
+              <img src="https://i.imgur.com/YjJPPoP.jpeg" alt="Plugins" style="width:24px;height:24px">
+              Plugins: LuckPerms, PlaceholderAPI
+            </li>
+            <li style="display:flex;align-items:center;gap:8px">
+              <img src="https://i.imgur.com/CsSSpbx.png" alt="Python" style="width:24px;height:24px">
+              Discord.py / Nextcord
+            </li>
+            <li style="display:flex;align-items:center;gap:8px">
+              <img src="https://i.imgur.com/Cjsdxi8.png" alt="Photoshop" style="width:24px;height:24px">
+              Photoshop / Illustrator
+            </li>
+            <li style="display:flex;align-items:center;gap:8px">
+              <img src="https://i.imgur.com/F0Fjj2A.png" alt="GitHub" style="width:24px;height:24px">
+              GitHub / Git
+            </li>
+          </ul>
+        </section>
       </main>
 
       <aside class="sidebar">
@@ -122,6 +188,14 @@
       </aside>
     </div>
   </div>
+
+  <!-- Botón flotante Discord -->
+  <a href="https://discord.com/users/1378995710841585778" 
+     target="_blank" 
+     class="discord-float">
+     <img src="https://i.imgur.com/1QsazyF.png" alt="Discord">
+     Contactar
+  </a>
 
   <script>
     const canvas = document.getElementById('stars');
