@@ -6,82 +6,6 @@
   <title>Portafolio de JeroxMC</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* Cards más grandes */
-    .card {
-      padding: 24px;
-      margin-bottom: 24px;
-      border-radius: 12px;
-      background-color: #1c1c1c;
-      color: #fff;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-    }
-
-    .gallery img {
-      width: 100%;
-      max-width: 200px;
-      cursor: pointer;
-      border-radius: 8px;
-      margin: 6px;
-      transition: transform 0.2s;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-
-    /* Botón Ver más */
-    .ver-mas {
-      background: none;
-      border: none;
-      color: #00ffff;
-      font-weight: 600;
-      cursor: pointer;
-      font-size: 0.9em;
-      margin-left: 8px;
-    }
-
-    .ver-mas:hover {
-      text-decoration: underline;
-    }
-
-    /* Lightbox */
-    .lightbox {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      top:0;
-      left:0;
-      width:100%;
-      height:100%;
-      background: rgba(0,0,0,0.9);
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      padding: 16px;
-    }
-
-    .lightbox-img {
-      max-width: 90%;
-      max-height: 80%;
-      border-radius: 12px;
-      margin-bottom: 12px;
-    }
-
-    .lightbox-caption {
-      color: #fff;
-      font-size: 1em;
-    }
-
-    .lightbox .close {
-      position: absolute;
-      top: 16px;
-      right: 24px;
-      font-size: 32px;
-      color: #fff;
-      cursor: pointer;
-    }
-  </style>
 </head>
 <body>
   <div class="wrap">
@@ -106,21 +30,25 @@
 
         <!-- Ejemplos de configuraciones -->
         <section class="card">
-          <h2>Ejemplos de configuraciones <button class="ver-mas" data-gallery="config">Ver más</button></h2>
-          <div class="gallery" id="gallery-config">
-            <img src="https://i.imgur.com/p9IfBeb.png" alt="Ejemplo configuración 1">
-            <img src="https://i.imgur.com/yiaGijh.png" alt="Ejemplo configuración 2">
-            <img src="https://i.imgur.com/haP5iDr.png" alt="Ejemplo configuración 3">
+          <h2>Ejemplos de configuraciones</h2>
+          <div class="gallery">
+            <img src="ejemplo1.png" alt="Ejemplo configuración 1">
+            <img src="ejemplo2.png" alt="Ejemplo configuración 2">
+            <img src="ejemplo3.png" alt="Ejemplo configuración 3">
           </div>
         </section>
 
         <!-- Ejemplos de diseño -->
         <section class="card">
-          <h2>Ejemplos de diseño <button class="ver-mas" data-gallery="diseño">Ver más</button></h2>
-          <div class="gallery" id="gallery-diseño">
-            <img src="https://i.imgur.com/Gtw4hnn.png" alt="Ejemplo de diseño 1">
-            <img src="https://i.imgur.com/wUENdwC.png" alt="Ejemplo de diseño 2">
-            <img src="https://i.imgur.com/asvqAze.png" alt="Ejemplo de diseño 3">
+          <h2>Ejemplos de diseño</h2>
+          <div class="gallery">
+            <img src="banner1.png" alt="Banner ejemplo 1">
+            <img src="logo1.png" alt="Logo ejemplo 2">
+            <img src="banner2.png" alt="Banner ejemplo 3">
+            <!-- Nuevas imágenes añadidas -->
+            <img src="https://i.imgur.com/Gtw4hnn.png" alt="Ejemplo de diseño 4">
+            <img src="https://i.imgur.com/wUENdwC.png" alt="Ejemplo de diseño 5">
+            <img src="https://i.imgur.com/asvqAze.png" alt="Ejemplo de diseño 6">
           </div>
         </section>
 
@@ -129,8 +57,8 @@
           <h2>Proyectos destacados</h2>
           <ul>
             <li><strong>Servidor BoxPvP</strong> — Configuración completa de menús, rangos y economía</li>
-            <li><strong>ZenithBot</strong> — Bot con sistema de tickets, panel interactivo, moderación y mucho más</li>
-            <li><strong>Eventos y Sorteos automáticos</strong> — Bots y scripts para administrar premios y competiciones</li>
+            <li><strong>NexoBot</strong> — Bot con sistema de tickets y panel interactivo</li>
+            <li><strong>Sistema de recompensas PvP</strong> — Configuración avanzada con PlaceholderAPI</li>
           </ul>
         </section>
 
@@ -243,65 +171,7 @@
     <img src="https://i.imgur.com/1QsazyF.png" alt="Discord"> Contactar
   </a>
 
-  <!-- Lightbox para imágenes -->
-  <div id="lightbox" class="lightbox">
-    <span class="close">&times;</span>
-    <img class="lightbox-img" src="" alt="">
-    <p class="lightbox-caption"></p>
-  </div>
-
-  <script>
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.querySelector(".lightbox-img");
-    const lightboxCaption = document.querySelector(".lightbox-caption");
-
-    const galleries = {
-      config: [
-        "https://i.imgur.com/p9IfBeb.png",
-        "https://i.imgur.com/yiaGijh.png",
-        "https://i.imgur.com/haP5iDr.png",
-        // Agrega más si quieres
-      ],
-      diseño: [
-        "https://i.imgur.com/Gtw4hnn.png",
-        "https://i.imgur.com/wUENdwC.png",
-        "https://i.imgur.com/asvqAze.png",
-        // Agrega más si quieres
-      ]
-    };
-
-    document.querySelectorAll(".ver-mas").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const galleryName = btn.dataset.gallery;
-        let index = 0;
-
-        function showImage() {
-          lightboxImg.src = galleries[galleryName][index];
-          lightboxCaption.textContent = `Imagen ${index + 1} de ${galleries[galleryName].length}`;
-          lightbox.style.display = "flex";
-        }
-
-        showImage();
-
-        lightbox.onclick = (e) => {
-          if (e.target === lightbox || e.target.classList.contains("close")) {
-            lightbox.style.display = "none";
-          }
-        }
-
-        document.onkeydown = (e) => {
-          if (e.key === "ArrowRight") {
-            index = (index + 1) % galleries[galleryName].length;
-            showImage();
-          }
-          if (e.key === "ArrowLeft") {
-            index = (index - 1 + galleries[galleryName].length) % galleries[galleryName].length;
-            showImage();
-          }
-        }
-      });
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
 
