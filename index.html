@@ -8,55 +8,15 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Contenedor principal -->
   <div class="wrap">
-    <div class="container">
-      <div id="dynamic-content"></div> <!-- Aquí se carga security.html -->
-
-      <aside class="sidebar">
-        <!-- Contacto -->
-        <section class="card" style="display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center">
-          <div class="avatar">JX</div>
-          <div>
-            <h2>Contacto</h2>
-            <p>Discord: <strong>JeroxMC</strong><br>Email: <strong>jeroxmc2@gmail.com</strong></p>
-          </div>
-        </section>
-
-        <!-- CV -->
-        <section class="card">
-          <h2>Descargar CV</h2>
-          <p style="color:rgba(255,255,255,0.6)">Disponible bajo pedido.</p>
-          <a class="btn" href="#">Descargar</a>
-        </section>
-
-        <!-- Redes -->
-        <section class="card">
-          <h2>Redes</h2>
-          <ul>
-            <li>Discord: JeroxMC</li>
-            <li>Comunidad: <a href="https://discord.gg/qAxB3fyXg8" target="_blank">Unirme</a></li>
-          </ul>
-        </section>
-      </aside>
-    </div>
-
-    <footer>
-      © 2025 JeroxMC. Todos los derechos reservados.
-    </footer>
+    <iframe src="security.html" style="width:100%;height:100vh;border:none;"></iframe>
   </div>
 
   <!-- Botón flotante Discord -->
-  <a href="https://discord.com/users/1378995710841585778" target="_blank" class="discord-float">
+  <a href="https://discord.com/users/1378995710841585778" target="_blank" class="discord-float" rel="noopener">
     <img src="https://i.imgur.com/1QsazyF.png" alt="Discord"> Contactar
   </a>
-
-  <!-- Carga dinámica -->
-  <script>
-    fetch('security.html')
-      .then(res => res.text())
-      .then(data => { document.getElementById('dynamic-content').innerHTML = data; })
-      .catch(err => console.error('Error cargando contenido:', err));
-  </script>
 
   <script src="script.js"></script>
 </body>
