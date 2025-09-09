@@ -32,9 +32,9 @@
         <section class="card">
           <h2>Ejemplos de configuraciones</h2>
           <div class="gallery">
-            <img src="https://i.imgur.com/p9IfBeb.png" alt="Ejemplo configuración 1: Servidor BoxPvP completo">
-            <img src="https://i.imgur.com/yiaGijh.png" alt="Ejemplo configuración 2: Configuración de menús y rangos">
-            <img src="https://i.imgur.com/haP5iDr.png" alt="Ejemplo configuración 3: Optimización de economía y placeholders">
+            <img src="ejemplo1.png" alt="Ejemplo configuración 1">
+            <img src="ejemplo2.png" alt="Ejemplo configuración 2">
+            <img src="ejemplo3.png" alt="Ejemplo configuración 3">
           </div>
         </section>
 
@@ -42,6 +42,10 @@
         <section class="card">
           <h2>Ejemplos de diseño</h2>
           <div class="gallery">
+            <img src="banner1.png" alt="Banner ejemplo 1">
+            <img src="logo1.png" alt="Logo ejemplo 2">
+            <img src="banner2.png" alt="Banner ejemplo 3">
+            <!-- Nuevas imágenes añadidas -->
             <img src="https://i.imgur.com/Gtw4hnn.png" alt="Ejemplo de diseño 4">
             <img src="https://i.imgur.com/wUENdwC.png" alt="Ejemplo de diseño 5">
             <img src="https://i.imgur.com/asvqAze.png" alt="Ejemplo de diseño 6">
@@ -61,28 +65,28 @@
         <!-- Tecnologías y Herramientas -->
         <section class="card">
           <h2>Tecnologías y Herramientas</h2>
-          <div class="tools-grid">
-            <div class="tool">
-              <img src="https://i.imgur.com/zpSg9rp.png" alt="Spigot">
-              <p>Spigot / Paper</p>
-            </div>
-            <div class="tool">
-              <img src="https://i.imgur.com/YjJPPoP.jpeg" alt="Plugins">
-              <p>Plugins: LuckPerms, PlaceholderAPI</p>
-            </div>
-            <div class="tool">
-              <img src="https://i.imgur.com/CsSSpbx.png" alt="Python">
-              <p>Discord.py / Nextcord</p>
-            </div>
-            <div class="tool">
-              <img src="https://i.imgur.com/Cjsdxi8.png" alt="Photoshop">
-              <p>Photoshop / Illustrator</p>
-            </div>
-            <div class="tool">
-              <img src="https://i.imgur.com/F0Fjj2A.png" alt="GitHub">
-              <p>GitHub / Git</p>
-            </div>
-          </div>
+          <ul style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;list-style:none;padding:0">
+            <li style="display:flex;align-items:center;gap:8px">
+              <img src="https://i.imgur.com/zpSg9rp.png" alt="Spigot" style="width:24px;height:24px">
+              Spigot / Paper
+            </li>
+            <li style="display:flex;align-items:center;gap:8px">
+              <img src="https://i.imgur.com/YjJPPoP.jpeg" alt="Plugins" style="width:24px;height:24px">
+              Plugins: LuckPerms, PlaceholderAPI
+            </li>
+            <li style="display:flex;align-items:center;gap:8px">
+              <img src="https://i.imgur.com/CsSSpbx.png" alt="Python" style="width:24px;height:24px">
+              Discord.py / Nextcord
+            </li>
+            <li style="display:flex;align-items:center;gap:8px">
+              <img src="https://i.imgur.com/Cjsdxi8.png" alt="Photoshop" style="width:24px;height:24px">
+              Photoshop / Illustrator
+            </li>
+            <li style="display:flex;align-items:center;gap:8px">
+              <img src="https://i.imgur.com/F0Fjj2A.png" alt="GitHub" style="width:24px;height:24px">
+              GitHub / Git
+            </li>
+          </ul>
         </section>
 
         <!-- Paquetes y Precios -->
@@ -130,19 +134,24 @@
 
       <!-- Sidebar -->
       <aside class="sidebar">
-        <section class="card contacto">
+        <!-- Contacto -->
+        <section class="card" style="display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center">
           <div class="avatar">JX</div>
-          <h2>Contacto</h2>
-          <p>Discord: <strong>JeroxMC</strong><br>Email: <strong>jeroxmc2@gmail.com</strong></p>
+          <div>
+            <h2>Contacto</h2>
+            <p style="margin:6px 0 0 0">Discord: <strong>JeroxMC</strong><br>Email: <strong>jeroxmc2@gmail.com</strong></p>
+          </div>
         </section>
 
+        <!-- CV -->
         <section class="card">
           <h2>Descargar CV</h2>
-          <p style="color:rgba(255,255,255,0.6)">Disponible bajo pedido.</p>
+          <p style="margin:8px 0 12px 0;color:rgba(255,255,255,0.6)">Disponible bajo pedido.</p>
           <a class="btn" href="#">Descargar</a>
         </section>
 
-        <section class="card">
+        <!-- Redes -->
+        <section id="contacto" class="card">
           <h2>Redes</h2>
           <ul>
             <li>Discord: JeroxMC</li>
@@ -165,5 +174,6 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
