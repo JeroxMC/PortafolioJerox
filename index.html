@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,19 +6,205 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Portafolio de JeroxMC</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ===== CSS GENERAL ===== */
+    :root{
+      --accent: #8be9fd;
+      --muted: rgba(255,255,255,0.75);
+      --card-bg: rgba(8,10,20,0.6);
+    }
+    *{box-sizing:border-box}
+    html,body{
+      height: 100%;
+      margin: 0;
+      font-family: Inter, system-ui, Arial, sans-serif;
+      color: var(--muted);
+      background:#02020b;
+      position: relative;
+    }
+    .wrap{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 48px;
+    }
+    .container{
+      max-width: 1100px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 28px;
+    }
+    header.card, section.card{
+      background: var(--card-bg);
+      border-radius: 14px;
+      padding: 24px;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    h1{margin:0;font-size:28px;color:white}
+    h2{margin:0 0 12px 0;color:var(--accent);font-size:18px}
+    p.lead{margin-top:8px;margin-bottom:18px;color:rgba(255,255,255,0.85)}
+    ul{margin:0;padding-left:16px}
+    li{margin:6px 0}
+    .sidebar{display:flex;flex-direction:column;gap:18px}
+    .avatar{height:88px;width:88px;border-radius:12px;background:linear-gradient(135deg,#6c5ce7,#00b894);display:flex;align-items:center;justify-content:center;font-weight:800;color:white;font-size:28px}
+    .btn{display:inline-block;padding:8px 14px;border-radius:10px;text-decoration:none;background:linear-gradient(90deg,#6c5ce7,#00b894);color:white;font-weight:600}
+    footer{margin-top:18px;color:rgba(255,255,255,0.5);font-size:13px}
+
+    @media (max-width:980px){
+      .container{grid-template-columns:1fr;}
+      .wrap{padding:22px}
+    }
+
+    /* ===== GALERÍA ===== */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .gallery img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      object-fit: cover;
+    }
+
+    /* ===== HERRAMIENTAS ===== */
+    .tools-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .tool {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .tool img {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 6px;
+    }
+    .skill-bar {
+      width: 100%;
+      height: 6px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .skill-bar div {
+      height: 100%;
+      background: var(--accent);
+    }
+
+    /* ===== PRECIOS ===== */
+    .precios-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+    .precio-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 18px;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .precio-card h3 {
+      margin: 0 0 8px 0;
+      color: var(--accent);
+    }
+    .precio-card strong {
+      display: block;
+      margin-top: 10px;
+      font-size: 20px;
+      color: white;
+    }
+    .precio-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+    }
+    .precio-card.destacado {
+      border: 1px solid var(--accent);
+      background: rgba(8,10,20,0.8);
+    }
+
+    /* ===== ESTADÍSTICAS ===== */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
+      gap: 18px;
+      margin-top: 18px;
+      text-align: center;
+    }
+    .stat {
+      background: rgba(255,255,255,0.05);
+      padding: 16px;
+      border-radius: 12px;
+    }
+    .stat .counter {
+      font-size: 28px;
+      font-weight: 800;
+      color: white;
+      display: block;
+    }
+
+    /* ===== FONDOS ===== */
+    .nebula{
+      position:fixed;
+      inset:-20% -10% -20% -10%;
+      z-index:-2;
+      pointer-events:none;
+      background-repeat:no-repeat;
+      background-size:cover;
+      background-image:
+        radial-gradient(700px 400px at 10% 20%, rgba(123, 31, 162, 0.18), transparent 25%),
+        radial-gradient(500px 300px at 80% 70%, rgba(0, 188, 212, 0.14), transparent 22%),
+        radial-gradient(400px 300px at 50% 90%, rgba(244, 67, 54, 0.12), transparent 22%);
+    }
+    .stars{
+      position:fixed;
+      inset:0;
+      background-image:radial-gradient(white 1px, transparent 1px);
+      background-size:3px 3px;
+      opacity:0.25;
+      z-index:-1;
+    }
+
+    /* Botón flotante Discord */
+    .discord-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: linear-gradient(90deg,#6c5ce7,#00b894);
+      color: white;
+      padding: 10px 14px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      z-index: 999;
+    }
+    .discord-float img { width:24px; height:24px; }
+  </style>
 </head>
 <body>
   <div class="wrap">
     <div class="container">
       <main>
-        <!-- Header -->
+        <!-- HEADER -->
         <header class="card">
           <h1>Portafolio de JeroxMC</h1>
           <p class="lead">Configurador de servidores Minecraft · Desarrollador de bots de Discord · Diseño gráfico básico</p>
         </header>
 
-        <!-- Servicios -->
+        <!-- SERVICIOS -->
         <section class="card">
           <h2>Servicios</h2>
           <ul>
@@ -28,27 +215,27 @@
           </ul>
         </section>
 
-        <!-- Ejemplos de configuraciones -->
+        <!-- EJEMPLOS DE CONFIGURACIÓN -->
         <section class="card">
           <h2>Ejemplos de configuraciones</h2>
           <div class="gallery">
-            <img src="https://i.imgur.com/p9IfBeb.png" alt="Ejemplo configuración 1">
-            <img src="https://i.imgur.com/yiaGijh.png" alt="Ejemplo configuración 2">
-            <img src="https://i.imgur.com/haP5iDr.png" alt="Ejemplo configuración 3">
+            <img src="https://i.imgur.com/p9IfBeb.png" alt="Ejemplo 1">
+            <img src="https://i.imgur.com/yiaGijh.png" alt="Ejemplo 2">
+            <img src="https://i.imgur.com/haP5iDr.png" alt="Ejemplo 3">
           </div>
         </section>
 
-        <!-- Ejemplos de diseño -->
+        <!-- EJEMPLOS DE DISEÑO -->
         <section class="card">
           <h2>Ejemplos de diseño</h2>
           <div class="gallery">
-            <img src="https://i.imgur.com/Gtw4hnn.png" alt="Ejemplo de diseño 1">
-            <img src="https://i.imgur.com/wUENdwC.png" alt="Ejemplo de diseño 2">
-            <img src="https://i.imgur.com/asvqAze.png" alt="Ejemplo de diseño 3">
+            <img src="https://i.imgur.com/Gtw4hnn.png" alt="Diseño 1">
+            <img src="https://i.imgur.com/wUENdwC.png" alt="Diseño 2">
+            <img src="https://i.imgur.com/asvqAze.png" alt="Diseño 3">
           </div>
         </section>
 
-        <!-- Proyectos destacados -->
+        <!-- PROYECTOS DESTACADOS -->
         <section class="card">
           <h2>Proyectos destacados</h2>
           <ul>
@@ -58,92 +245,41 @@
           </ul>
         </section>
 
-        <!-- Tecnologías y Herramientas -->
+        <!-- TECNOLOGÍAS -->
         <section class="card">
           <h2>Tecnologías y Herramientas</h2>
           <div class="tools-grid">
-            <div class="tool">
-              <img src="https://i.imgur.com/zpSg9rp.png" alt="Spigot">
-              <p>Spigot / Paper</p>
-              <div class="skill-bar"><div style="width: 95%;"></div></div>
-            </div>
-            <div class="tool">
-              <img src="https://i.imgur.com/YjJPPoP.jpeg" alt="Plugins">
-              <p>LuckPerms / PlaceholderAPI</p>
-              <div class="skill-bar"><div style="width: 90%;"></div></div>
-            </div>
-            <div class="tool">
-              <img src="https://i.imgur.com/CsSSpbx.png" alt="Python">
-              <p>Discord.py / Nextcord</p>
-              <div class="skill-bar"><div style="width: 85%;"></div></div>
-            </div>
-            <div class="tool">
-              <img src="https://i.imgur.com/Cjsdxi8.png" alt="Photoshop">
-              <p>Photoshop / Illustrator</p>
-              <div class="skill-bar"><div style="width: 75%;"></div></div>
-            </div>
-            <div class="tool">
-              <img src="https://i.imgur.com/F0Fjj2A.png" alt="GitHub">
-              <p>GitHub / Git</p>
-              <div class="skill-bar"><div style="width: 80%;"></div></div>
-            </div>
+            <div class="tool"><img src="https://i.imgur.com/zpSg9rp.png" alt="Spigot"><p>Spigot / Paper</p><div class="skill-bar"><div style="width: 95%;"></div></div></div>
+            <div class="tool"><img src="https://i.imgur.com/YjJPPoP.jpeg" alt="Plugins"><p>LuckPerms / PlaceholderAPI</p><div class="skill-bar"><div style="width: 90%;"></div></div></div>
+            <div class="tool"><img src="https://i.imgur.com/CsSSpbx.png" alt="Python"><p>Discord.py / Nextcord</p><div class="skill-bar"><div style="width: 85%;"></div></div></div>
+            <div class="tool"><img src="https://i.imgur.com/Cjsdxi8.png" alt="Photoshop"><p>Photoshop / Illustrator</p><div class="skill-bar"><div style="width: 75%;"></div></div></div>
+            <div class="tool"><img src="https://i.imgur.com/F0Fjj2A.png" alt="GitHub"><p>GitHub / Git</p><div class="skill-bar"><div style="width: 80%;"></div></div></div>
           </div>
         </section>
 
-        <!-- Paquetes y Precios -->
+        <!-- PAQUETES -->
         <section class="card precios">
           <h2>Paquetes y Precios</h2>
           <div class="precios-grid">
-            <div class="precio-card">
-              <h3>Básico</h3>
-              <p>Configuración simple de plugins y rangos.</p>
-              <strong>$10</strong>
-            </div>
-            <div class="precio-card destacado">
-              <h3>Premium</h3>
-              <p>Servidor optimizado con menús, rangos y placeholders.</p>
-              <strong>$25</strong>
-            </div>
-            <div class="precio-card">
-              <h3>Avanzado</h3>
-              <p>Setup completo con economía, menús, rangos y extras personalizados.</p>
-              <strong>$40</strong>
-            </div>
+            <div class="precio-card"><h3>Básico</h3><p>Configuración simple de plugins y rangos.</p><strong>$10</strong></div>
+            <div class="precio-card destacado"><h3>Premium</h3><p>Servidor optimizado con menús, rangos y placeholders.</p><strong>$25</strong></div>
+            <div class="precio-card"><h3>Avanzado</h3><p>Setup completo con economía, menús, rangos y extras personalizados.</p><strong>$40</strong></div>
           </div>
         </section>
 
-        <!-- Estadísticas -->
+        <!-- ESTADÍSTICAS -->
         <section class="card stats">
           <h2>Estadísticas</h2>
           <div class="stats-grid">
-            <div class="stat">
-              <span class="counter" data-count="20">0</span>
-              <p>Proyectos terminados</p>
-            </div>
-            <div class="stat">
-              <span class="counter" data-count="3">0</span>
-              <p>Años de experiencia</p>
-            </div>
-            <div class="stat">
-              <span class="counter" data-count="100">0</span>
-              <p>% Satisfacción</p>
-            </div>
+            <div class="stat"><span class="counter" data-count="20">0</span><p>Proyectos terminados</p></div>
+            <div class="stat"><span class="counter" data-count="3">0</span><p>Años de experiencia</p></div>
+            <div class="stat"><span class="counter" data-count="100">0</span><p>% Satisfacción</p></div>
           </div>
-        </section>
-
-        <!-- Blog / Tutoriales -->
-        <section class="card">
-          <h2>Tutoriales y Guías</h2>
-          <ul>
-            <li><a href="#">Cómo configurar un servidor BoxPvP paso a paso</a></li>
-            <li><a href="#">Automatizando tu Discord con NexoBot</a></li>
-            <li><a href="#">Optimización de menús y rangos en Minecraft</a></li>
-          </ul>
         </section>
 
       </main>
 
-      <!-- Sidebar -->
+      <!-- SIDEBAR -->
       <aside class="sidebar">
         <section class="card contacto">
           <div class="avatar">JX</div>
@@ -157,7 +293,6 @@
           <a class="btn" href="#">Descargar</a>
         </section>
 
-        <!-- Discord Widget -->
         <section class="card">
           <h2>Unirse al servidor</h2>
           <iframe src="https://discord.com/widget?id=1378996892339404801&theme=dark" width="100%" height="250" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
@@ -173,9 +308,7 @@
       </aside>
     </div>
 
-    <footer>
-      © 2025 JeroxMC. Todos los derechos reservados.
-    </footer>
+    <footer>© 2025 JeroxMC. Todos los derechos reservados.</footer>
   </div>
 
   <!-- Botón flotante Discord -->
@@ -183,12 +316,43 @@
     <img src="https://i.imgur.com/1QsazyF.png" alt="Discord"> Contactar
   </a>
 
-  <script src="script.js"></script>
+  <!-- SCRIPT: CONTADORES -->
+  <script>
+    function animateCounters() {
+      const counters = document.querySelectorAll('.counter');
+      counters.forEach(counter => {
+        const updateCount = () => {
+          const target = +counter.getAttribute('data-count');
+          const count = +counter.innerText;
+          const speed = 50;
+          const increment = Math.ceil(target / 100);
+          if(count < target){
+            counter.innerText = count + increment;
+            setTimeout(updateCount, speed);
+          } else {
+            counter.innerText = target;
+          }
+        };
+        updateCount();
+      });
+    }
+
+    const statsSection = document.querySelector('.stats');
+    let statsShown = false;
+    function onScrollCounters() {
+      if(!statsSection) return;
+      const rect = statsSection.getBoundingClientRect();
+      if(!statsShown && rect.top < window.innerHeight){
+        statsShown = true;
+        animateCounters();
+        window.removeEventListener('scroll', onScrollCounters);
+      }
+    }
+    window.addEventListener('scroll', onScrollCounters);
+    onScrollCounters();
+  </script>
 </body>
 </html>
-
-
-
 
 
 
