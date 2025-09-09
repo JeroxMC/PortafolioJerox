@@ -42,10 +42,9 @@
         <section class="card">
           <h2>Ejemplos de diseño</h2>
           <div class="gallery">
-            <!-- Nuevas imágenes añadidas -->
-            <img src="https://i.imgur.com/Gtw4hnn.png" alt="Ejemplo de diseño 4">
-            <img src="https://i.imgur.com/wUENdwC.png" alt="Ejemplo de diseño 5">
-            <img src="https://i.imgur.com/asvqAze.png" alt="Ejemplo de diseño 6">
+            <img src="https://i.imgur.com/Gtw4hnn.png" alt="Ejemplo de diseño 1">
+            <img src="https://i.imgur.com/wUENdwC.png" alt="Ejemplo de diseño 2">
+            <img src="https://i.imgur.com/asvqAze.png" alt="Ejemplo de diseño 3">
           </div>
         </section>
 
@@ -62,34 +61,34 @@
         <!-- Tecnologías y Herramientas -->
         <section class="card">
           <h2>Tecnologías y Herramientas</h2>
-          <ul style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;list-style:none;padding:0">
-            <li style="display:flex;align-items:center;gap:8px">
-              <img src="https://i.imgur.com/zpSg9rp.png" alt="Spigot" style="width:24px;height:24px">
-              Spigot / Paper
-            </li>
-            <li style="display:flex;align-items:center;gap:8px">
-              <img src="https://i.imgur.com/YjJPPoP.jpeg" alt="Plugins" style="width:24px;height:24px">
-              Plugins: LuckPerms, PlaceholderAPI
-            </li>
-            <li style="display:flex;align-items:center;gap:8px">
-              <img src="https://i.imgur.com/CsSSpbx.png" alt="Python" style="width:24px;height:24px">
-              Discord.py / Nextcord
-            </li>
-            <li style="display:flex;align-items:center;gap:8px">
-              <img src="https://i.imgur.com/Cjsdxi8.png" alt="Photoshop" style="width:24px;height:24px">
-              Photoshop / Illustrator
-            </li>
-            <li style="display:flex;align-items:center;gap:8px">
-              <img src="https://i.imgur.com/F0Fjj2A.png" alt="GitHub" style="width:24px;height:24px">
-              GitHub / Git
-            </li>
-          </ul>
+          <div class="grid-cards">
+            <div class="tech-card">
+              <img src="https://i.imgur.com/zpSg9rp.png" alt="Spigot">
+              <p>Spigot / Paper</p>
+            </div>
+            <div class="tech-card">
+              <img src="https://i.imgur.com/YjJPPoP.jpeg" alt="Plugins">
+              <p>Plugins: LuckPerms, PlaceholderAPI</p>
+            </div>
+            <div class="tech-card">
+              <img src="https://i.imgur.com/CsSSpbx.png" alt="Python">
+              <p>Discord.py / Nextcord</p>
+            </div>
+            <div class="tech-card">
+              <img src="https://i.imgur.com/Cjsdxi8.png" alt="Photoshop">
+              <p>Photoshop / Illustrator</p>
+            </div>
+            <div class="tech-card">
+              <img src="https://i.imgur.com/F0Fjj2A.png" alt="GitHub">
+              <p>GitHub / Git</p>
+            </div>
+          </div>
         </section>
 
         <!-- Paquetes y Precios -->
         <section class="card precios">
           <h2>Paquetes y Precios</h2>
-          <div class="precios-grid">
+          <div class="grid-cards">
             <div class="precio-card">
               <h3>Básico</h3>
               <p>Configuración simple de plugins y rangos.</p>
@@ -111,7 +110,7 @@
         <!-- Estadísticas -->
         <section class="card stats">
           <h2>Estadísticas</h2>
-          <div class="stats-grid">
+          <div class="grid-cards">
             <div class="stat">
               <span class="counter" data-count="20">0</span>
               <p>Proyectos terminados</p>
@@ -168,8 +167,14 @@
     <img src="https://i.imgur.com/1QsazyF.png" alt="Discord"> Contactar
   </a>
 
+  <!-- Lightbox para imágenes -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-img" src="" alt="">
+    <p class="lightbox-caption"></p>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
-
 
