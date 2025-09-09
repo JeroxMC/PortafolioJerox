@@ -1,20 +1,23 @@
-:root{
+:root {
   --accent: #8be9fd;
   --muted: rgba(255,255,255,0.75);
   --card-bg: rgba(8,10,20,0.6);
 }
 
-*{box-sizing:border-box;}
-html,body{
-  height:100%;
-  margin:0;
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
   font-family: Inter, system-ui, Arial, sans-serif;
   color: var(--muted);
-  background:#02020b;
+  background: #02020b;
   position: relative;
 }
 
-.wrap{
+.wrap {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,7 +25,7 @@ html,body{
   padding: 48px;
 }
 
-.container{
+.container {
   max-width: 1100px;
   width: 100%;
   display: grid;
@@ -30,179 +33,218 @@ html,body{
   gap: 28px;
 }
 
-header.card, section.card{
+header.card, section.card {
   background: var(--card-bg);
   border-radius: 14px;
   padding: 24px;
-  border:1px solid rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.05);
 }
 
-h1{margin:0;font-size:28px;color:white;}
-h2{margin:0 0 12px 0;color:var(--accent);font-size:18px;}
-p.lead{margin-top:8px;margin-bottom:18px;color:rgba(255,255,255,0.85);}
-ul{margin:0;padding-left:16px;}
-li{margin:6px 0;}
+h1 {
+  margin: 0;
+  font-size: 28px;
+  color: white;
+}
 
-.sidebar{display:flex;flex-direction:column;gap:18px;}
-.avatar{height:88px;width:88px;border-radius:12px;background:linear-gradient(135deg,#6c5ce7,#00b894);display:flex;align-items:center;justify-content:center;font-weight:800;color:white;font-size:28px;}
-.btn{display:inline-block;padding:8px 14px;border-radius:10px;text-decoration:none;background:linear-gradient(90deg,#6c5ce7,#00b894);color:white;font-weight:600;}
+h2 {
+  margin: 0 0 12px 0;
+  color: var(--accent);
+  font-size: 18px;
+}
 
-footer{margin-top:18px;color:rgba(255,255,255,0.5);font-size:13px}
+p.lead {
+  margin-top: 8px;
+  margin-bottom: 18px;
+  color: rgba(255,255,255,0.85);
+}
+
+ul {
+  margin: 0;
+  padding-left: 16px;
+}
+
+li {
+  margin: 6px 0;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.avatar {
+  height: 88px;
+  width: 88px;
+  border-radius: 12px;
+  background: linear-gradient(135deg,#6c5ce7,#00b894);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  color: white;
+  font-size: 28px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  background: linear-gradient(90deg,#6c5ce7,#00b894);
+  color: white;
+  font-weight: 600;
+}
+
+footer {
+  margin-top: 18px;
+  color: rgba(255,255,255,0.5);
+  font-size: 13px;
+}
+
+@media (max-width:980px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  .wrap {
+    padding: 22px;
+  }
+}
 
 /* Galería */
 .gallery {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  justify-content:center;
 }
 .gallery img {
   border-radius: 8px;
-  max-width: 250px;
-  width: 100%;
+  max-width: 100%;
+  max-height: 180px; /* Limita altura */
+  object-fit: cover;
   transition: transform 0.2s ease;
 }
 .gallery img:hover {
   transform: scale(1.05);
 }
 
-/* ===== Paquetes y Precios ===== */
+/* ===== Precios ===== */
 .precios-grid {
   display: flex;
-  flex-wrap: wrap;
   gap: 18px;
-  justify-content:center;
+  flex-wrap: wrap;
+  justify-content: center;
   margin-top: 18px;
 }
 .precio-card {
   background: rgba(255,255,255,0.05);
-  border:1px solid rgba(255,255,255,0.1);
-  border-radius:12px;
-  padding:18px;
-  text-align:center;
-  flex:1 1 200px;
-  max-width:220px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 18px;
+  text-align: center;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 200px;
 }
-.precio-card h3{margin:0 0 8px 0;color:var(--accent);}
-.precio-card strong{display:block;margin-top:10px;font-size:20px;color:white;}
-.precio-card:hover{transform:scale(1.05);box-shadow:0 6px 16px rgba(0,0,0,0.4);}
-.precio-card.destacado{border:1px solid var(--accent);background:rgba(8,10,20,0.8);}
-
-/* ===== Tecnologías y Herramientas ===== */
-.tools-grid{
-  display:flex;
-  flex-wrap:wrap;
-  gap:16px;
-  justify-content:center;
-  margin-top:18px;
+.precio-card h3 {
+  margin: 0 0 8px 0;
+  color: var(--accent);
 }
-.tool{
-  background:rgba(255,255,255,0.05);
-  padding:16px;
-  border-radius:12px;
-  text-align:center;
-  flex:1 1 160px;
-  max-width:200px;
+.precio-card strong {
+  display: block;
+  margin-top: 10px;
+  font-size: 20px;
+  color: white;
 }
-.tool img{width:40px;height:40px;margin-bottom:8px;}
+.precio-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+}
+.precio-card.destacado {
+  border: 1px solid var(--accent);
+  background: rgba(8,10,20,0.8);
+}
 
 /* ===== Estadísticas ===== */
-.stats-grid{
-  display:flex;
-  flex-wrap:wrap;
-  gap:18px;
-  justify-content:center;
-  margin-top:18px;
+.stats-grid {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 18px;
 }
-.stat{
-  background:rgba(255,255,255,0.05);
-  padding:16px;
-  border-radius:12px;
-  text-align:center;
-  flex:1 1 160px;
-  max-width:180px;
+.stat {
+  background: rgba(255,255,255,0.05);
+  padding: 16px;
+  border-radius: 12px;
+  width: 160px;
+  text-align: center;
 }
-.stat .counter{
-  font-size:28px;
-  font-weight:800;
-  color:white;
-  display:block;
+.stat .counter {
+  font-size: 28px;
+  font-weight: 800;
+  color: white;
+  display: block;
 }
 
-/* Lightbox */
-.lightbox{
-  display:none;
-  position:fixed;
-  top:0;left:0;width:100%;height:100%;
-  background:rgba(0,0,0,0.85);
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
-  z-index:999;
+/* ===== Tecnologías y Herramientas ===== */
+.tech-grid {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 0;
+  list-style: none;
 }
-.lightbox-img{
-  max-width:90%;
-  max-height:70%;
-  border-radius:10px;
-  margin-bottom:12px;
+.tech-grid li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.05);
+  padding: 8px 12px;
+  border-radius: 10px;
+  min-width: 160px;
 }
-.lightbox-caption{
-  color:white;
-  text-align:center;
+
+/* Fondos */
+.nebula {
+  position: fixed;
+  inset: -20% -10% -20% -10%;
+  z-index: -2;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image:
+    radial-gradient(700px 400px at 10% 20%, rgba(123, 31, 162, 0.18), transparent 25%),
+    radial-gradient(500px 300px at 80% 70%, rgba(0, 188, 212, 0.14), transparent 22%),
+    radial-gradient(400px 300px at 50% 90%, rgba(244, 67, 54, 0.12), transparent 22%);
 }
-.lightbox .close{
-  position:absolute;
-  top:24px;
-  right:24px;
-  font-size:32px;
-  color:white;
-  cursor:pointer;
+.stars {
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 3px 3px;
+  opacity: 0.25;
+  z-index: -1;
 }
 
 /* Botón flotante Discord */
-.discord-float{
-  position:fixed;
-  bottom:24px;
-  right:24px;
-  background:#7289da;
-  color:white;
-  padding:10px 14px;
-  border-radius:24px;
-  font-weight:600;
-  text-decoration:none;
-  display:flex;
-  align-items:center;
-  gap:8px;
-  z-index:100;
+.discord-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(90deg,#6c5ce7,#00b894);
+  color: white;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  z-index: 100;
 }
-.discord-float img{width:24px;height:24px;}
-
-/* Fondos */
-.nebula{
-  position:fixed;
-  inset:-20% -10% -20% -10%;
-  z-index:-2;
-  pointer-events:none;
-  background-repeat:no-repeat;
-  background-size:cover;
-  background-image:
-    radial-gradient(700px 400px at 10% 20%, rgba(123,31,162,0.18), transparent 25%),
-    radial-gradient(500px 300px at 80% 70%, rgba(0,188,212,0.14), transparent 22%),
-    radial-gradient(400px 300px at 50% 90%, rgba(244,67,54,0.12), transparent 22%);
-}
-.stars{
-  position:fixed;
-  inset:0;
-  background-image:radial-gradient(white 1px, transparent 1px);
-  background-size:3px 3px;
-  opacity:0.25;
-  z-index:-1;
+.discord-float img {
+  width: 24px;
+  height: 24px;
 }
 
-/* Responsive */
-@media(max-width:980px){
-  .container{grid-template-columns:1fr;}
-  .wrap{padding:22px;}
-  .tools-grid, .precios-grid, .stats-grid{justify-content:center;}
-}
