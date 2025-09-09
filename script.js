@@ -8,7 +8,7 @@ function animateCounters() {
       const speed = 50; // ms
       const increment = Math.ceil(target / 100);
 
-      if(count < target) {
+      if (count < target) {
         counter.innerText = count + increment;
         setTimeout(updateCount, speed);
       } else {
@@ -23,10 +23,14 @@ function animateCounters() {
 const statsSection = document.querySelector('.stats');
 let statsShown = false;
 
-window.addEventListener('scroll', () => {
+function onScrollCounters() {
+  if (!statsSection) return;
   const rect = statsSection.getBoundingClientRect();
-  if(!statsShown && rect.top < window.innerHeight) {
+  if (!statsShown && rect.top < window.innerHeight) {
     statsShown = true;
     animateCounters();
+    window.removeEventListener('scroll', onScrollCounters);
   }
-});
+}
+window.addEventListener('scroll', onScrollCounters);
+onScrollCounters(); // por si ya es visible al cargar
