@@ -10,149 +10,31 @@
 <body>
   <div class="wrap">
     <div class="container">
-      <main>
-        <!-- Header -->
-        <header class="card">
-          <h1>Portafolio de JeroxMC</h1>
-          <p class="lead">Configurador de servidores Minecraft · Desarrollador de bots de Discord · Diseño gráfico básico</p>
-        </header>
+      <div id="dynamic-content"></div> <!-- Aquí se carga security.html -->
 
-        <!-- Servicios -->
-        <section class="card">
-          <h2>Servicios</h2>
-          <ul>
-            <li>Configuración de plugins en servidores Minecraft (Spigot, Paper)</li>
-            <li>Optimización de rangos, menús, placeholders y sistemas</li>
-            <li>Desarrollo de bots para Discord (tickets, sorteos, economía)</li>
-            <li>Diseño de banners, logos simples y portadas</li>
-          </ul>
-        </section>
-
-        <!-- Ejemplos de configuraciones -->
-        <section class="card">
-          <h2>Ejemplos de configuraciones</h2>
-          <div class="gallery">
-            <img src="https://i.imgur.com/p9IfBeb.png" alt="Ejemplo configuración 1: Servidor BoxPvP completo">
-            <img src="https://i.imgur.com/yiaGijh.png" alt="Ejemplo configuración 2: Configuración de menús y rangos">
-            <img src="https://i.imgur.com/haP5iDr.png" alt="Ejemplo configuración 3: Optimización de economía y placeholders">
-          </div>
-        </section>
-
-        <!-- Ejemplos de diseño -->
-        <section class="card">
-          <h2>Ejemplos de diseño</h2>
-          <div class="gallery">
-            <!-- Nuevas imágenes añadidas -->
-            <img src="https://i.imgur.com/Gtw4hnn.png" alt="Ejemplo de diseño 4">
-            <img src="https://i.imgur.com/wUENdwC.png" alt="Ejemplo de diseño 5">
-            <img src="https://i.imgur.com/asvqAze.png" alt="Ejemplo de diseño 6">
-          </div>
-        </section>
-
-        <!-- Proyectos destacados -->
-        <section class="card">
-          <h2>Proyectos destacados</h2>
-          <ul>
-            <li><strong>Servidor BoxPvP</strong> — Configuración completa de menús, rangos y economía</li>
-            <li><strong>ZenithBot</strong> — Bot con sistema de tickets y panel interactivo</li>
-            <li><strong>Proxy + Lobby</strong> — Configuración avanzada De un lobby conectando 4 modalidades (boxpvp, fullpvp, survival y gens)</li>
-          </ul>
-        </section>
-
-        <!-- Tecnologías y Herramientas -->
-        <section class="card">
-          <h2>Tecnologías y Herramientas</h2>
-          <ul style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;list-style:none;padding:0">
-            <li style="display:flex;align-items:center;gap:8px">
-              <img src="https://i.imgur.com/zpSg9rp.png" alt="Spigot" style="width:24px;height:24px">
-              Spigot / Paper
-            </li>
-            <li style="display:flex;align-items:center;gap:8px">
-              <img src="https://i.imgur.com/YjJPPoP.jpeg" alt="Plugins" style="width:24px;height:24px">
-              Plugins: LuckPerms, PlaceholderAPI
-            </li>
-            <li style="display:flex;align-items:center;gap:8px">
-              <img src="https://i.imgur.com/CsSSpbx.png" alt="Python" style="width:24px;height:24px">
-              Discord.py / Nextcord
-            </li>
-            <li style="display:flex;align-items:center;gap:8px">
-              <img src="https://i.imgur.com/Cjsdxi8.png" alt="Photoshop" style="width:24px;height:24px">
-              Photoshop / Illustrator
-            </li>
-            <li style="display:flex;align-items:center;gap:8px">
-              <img src="https://i.imgur.com/F0Fjj2A.png" alt="GitHub" style="width:24px;height:24px">
-              GitHub / Git
-            </li>
-          </ul>
-        </section>
-
-        <!-- Paquetes y Precios -->
-        <section class="card precios">
-          <h2>Paquetes y Precios</h2>
-          <div class="precios-grid">
-            <div class="precio-card">
-              <h3>Básico</h3>
-              <p>Configuración simple de plugins y rangos.</p>
-              <strong>$1</strong>
-            </div>
-            <div class="precio-card destacado">
-              <h3>Premium</h3>
-              <p>Servidor optimizado con menús, rangos y placeholders.</p>
-              <strong>$5</strong>
-            </div>
-            <div class="precio-card">
-              <h3>Avanzado</h3>
-              <p>Setup completo con economía, menús, rangos y extras personalizados.</p>
-              <strong>$10</strong>
-            </div>
-          </div>
-        </section>
-
-        <!-- Estadísticas -->
-        <section class="card stats">
-          <h2>Estadísticas</h2>
-          <div class="stats-grid">
-            <div class="stat">
-              <span class="counter" data-count="30">0</span>
-              <p>Proyectos terminados</p>
-            </div>
-            <div class="stat">
-              <span class="counter" data-count="4">0</span>
-              <p>Años de experiencia</p>
-            </div>
-            <div class="stat">
-              <span class="counter" data-count="100">0</span>
-              <p>Nivel de Satisfacción</p>
-            </div>
-          </div>
-        </section>
-
-      </main>
-
-      <!-- Sidebar -->
       <aside class="sidebar">
         <!-- Contacto -->
         <section class="card" style="display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center">
           <div class="avatar">JX</div>
           <div>
             <h2>Contacto</h2>
-            <p style="margin:6px 0 0 0">Discord: <strong>JeroxMC</strong><br>Email: <strong>jeroxmc2@gmail.com</strong></p>
+            <p>Discord: <strong>JeroxMC</strong><br>Email: <strong>jeroxmc2@gmail.com</strong></p>
           </div>
         </section>
 
         <!-- CV -->
         <section class="card">
           <h2>Descargar CV</h2>
-          <p style="margin:8px 0 12px 0;color:rgba(255,255,255,0.6)">Disponible bajo pedido.</p>
+          <p style="color:rgba(255,255,255,0.6)">Disponible bajo pedido.</p>
           <a class="btn" href="#">Descargar</a>
         </section>
 
         <!-- Redes -->
-        <section id="contacto" class="card">
+        <section class="card">
           <h2>Redes</h2>
           <ul>
             <li>Discord: JeroxMC</li>
-            <li>Comunidad: <a href="https://discord.gg/qAxB3fyXg8" target="_blank" rel="noopener">Unirme</a></li>
+            <li>Comunidad: <a href="https://discord.gg/qAxB3fyXg8" target="_blank">Unirme</a></li>
           </ul>
         </section>
       </aside>
@@ -164,13 +46,22 @@
   </div>
 
   <!-- Botón flotante Discord -->
-  <a href="https://discord.com/users/1378995710841585778" target="_blank" class="discord-float" rel="noopener">
+  <a href="https://discord.com/users/1378995710841585778" target="_blank" class="discord-float">
     <img src="https://i.imgur.com/1QsazyF.png" alt="Discord"> Contactar
   </a>
+
+  <!-- Carga dinámica -->
+  <script>
+    fetch('security.html')
+      .then(res => res.text())
+      .then(data => { document.getElementById('dynamic-content').innerHTML = data; })
+      .catch(err => console.error('Error cargando contenido:', err));
+  </script>
 
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
